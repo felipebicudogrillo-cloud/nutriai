@@ -155,7 +155,7 @@ export function ConfirmationCard({
             <div className="flex items-center justify-between mb-3 text-sm">
               <span className="text-ink-500">Total</span>
               <span className="font-semibold text-ink-900">
-                🔥 {Math.round(totals.kcal)} kcal · 💪 {round1(totals.protein)}g · 🍚 {round1(totals.carbs)}g · 🥑 {round1(totals.fat)}g
+                🔥 {Math.round(totals.kcal)} kcal · 💪 {round1(totals.protein)}g · 🍚 {round1(totals.carbs)}g · 🥑 {round1(totals.fat)}g · 🍬 {round1(totals.sugar)}g
               </span>
             </div>
             <button

@@ -91,7 +91,7 @@ export function EditEntryModal({ entry, onClose }: Props) {
         </div>
 
         <div className="rounded-lg bg-ink-50 px-3 py-2 text-xs text-ink-500">
-          🔥 {Math.round(preview.kcal)} kcal · 💪 {preview.protein}g · 🍚 {preview.carbs}g · 🥑 {preview.fat}g
+          🔥 {Math.round(preview.kcal)} kcal · 💪 {preview.protein}g · 🍚 {preview.carbs}g · 🥑 {preview.fat}g · 🍬 {preview.sugar}g
         </div>
 
         <div className="flex gap-2 pt-1">

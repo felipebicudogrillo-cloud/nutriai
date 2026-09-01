@@ -3,10 +3,11 @@ interface Props {
   protein: number;
   carbs: number;
   fat: number;
+  sugar: number;
   size?: "sm" | "md";
 }
 
-export function MacroRow({ kcal, protein, carbs, fat, size = "sm" }: Props) {
+export function MacroRow({ kcal, protein, carbs, fat, sugar, size = "sm" }: Props) {
   const text = size === "sm" ? "text-xs" : "text-sm";
   return (
     <div className={`flex items-center gap-3 ${text} text-ink-500`}>
@@ -14,6 +15,7 @@ export function MacroRow({ kcal, protein, carbs, fat, size = "sm" }: Props) {
       <span>💪 {round1(protein)}g</span>
       <span>🍚 {round1(carbs)}g</span>
       <span>🥑 {round1(fat)}g</span>
+      <span>🍬 {round1(sugar)}g</span>
     </div>
   );
 }
