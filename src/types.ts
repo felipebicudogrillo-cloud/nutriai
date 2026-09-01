@@ -16,6 +16,7 @@ export interface Food {
   protein: number;
   carbs: number;
   fat: number;
+  sugar: number;
   emoji?: string;
   createdAt: string;
   lastUsedAt?: string;
@@ -45,6 +46,7 @@ export interface LogEntry {
   protein: number;
   carbs: number;
   fat: number;
+  sugar: number;
   isEstimate: boolean;
   source: "personal" | "generic" | "estimate";
   createdAt: string;
@@ -60,6 +62,7 @@ export interface SavedMealItem {
   protein: number;
   carbs: number;
   fat: number;
+  sugar: number;
   isEstimate: boolean;
   source: "personal" | "generic" | "estimate";
 }
@@ -78,6 +81,7 @@ export interface Goals {
   protein: number;
   carbs?: number;
   fat?: number;
+  sugar?: number;
 }
 
 export interface AppData {
@@ -93,4 +97,5 @@ export interface Totals {
   protein: number;
   carbs: number;
   fat: number;
+  sugar: number;
 }

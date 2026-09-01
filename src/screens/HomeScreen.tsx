@@ -53,6 +53,7 @@ export function HomeScreen() {
         <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
           <MacroMini label="Carboidratos" value={totals.carbs} goal={goals.carbs} emoji="🍚" />
           <MacroMini label="Gordura" value={totals.fat} goal={goals.fat} emoji="🥑" />
+          <MacroMini label="Açúcar" value={totals.sugar} goal={goals.sugar} emoji="🍬" />
         </div>
       </section>
 

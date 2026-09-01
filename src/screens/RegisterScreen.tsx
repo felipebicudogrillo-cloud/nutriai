@@ -102,6 +102,7 @@ export function RegisterScreen({ onDone }: Props) {
           protein: i.protein,
           carbs: i.carbs,
           fat: i.fat,
+          sugar: i.sugar,
           isEstimate: i.isEstimate,
           source: i.source,
         }))

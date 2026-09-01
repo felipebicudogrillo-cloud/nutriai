@@ -32,6 +32,7 @@ export function GoalsCard() {
           <Tile label="Proteína" value={`${data.goals.protein} g`} />
           <Tile label="Carboidratos" value={data.goals.carbs ? `${data.goals.carbs} g` : "—"} />
           <Tile label="Gordura" value={data.goals.fat ? `${data.goals.fat} g` : "—"} />
+          <Tile label="Açúcar" value={data.goals.sugar ? `${data.goals.sugar} g` : "—"} />
         </div>
       </div>
     );
@@ -45,6 +46,7 @@ export function GoalsCard() {
         <NumField label="Proteína (g)" value={form.protein} onChange={(v) => setForm((f) => ({ ...f, protein: v }))} />
         <NumField label="Carboidratos (g)" value={form.carbs ?? 0} onChange={(v) => setForm((f) => ({ ...f, carbs: v }))} />
         <NumField label="Gordura (g)" value={form.fat ?? 0} onChange={(v) => setForm((f) => ({ ...f, fat: v }))} />
+        <NumField label="Açúcar (g)" value={form.sugar ?? 0} onChange={(v) => setForm((f) => ({ ...f, sugar: v }))} />
       </div>
       <div className="flex gap-2">
         <button onClick={() => setEditing(false)} className="flex-1 rounded-lg border border-ink-200 text-ink-500 text-sm font-medium py-2">

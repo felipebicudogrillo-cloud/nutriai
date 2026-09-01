@@ -16,6 +16,7 @@ export interface ParsedItem {
   protein: number;
   carbs: number;
   fat: number;
+  sugar: number;
   isEstimate: boolean;
   source: "personal" | "generic" | "estimate";
   status: "resolved" | "ambiguous" | "unresolved";
@@ -221,6 +222,7 @@ export function parseEntryText(text: string, foods: Food[], savedMeals: SavedMea
         protein: si.protein,
         carbs: si.carbs,
         fat: si.fat,
+        sugar: si.sugar,
         isEstimate: si.isEstimate,
         source: si.source,
         status: "resolved",
@@ -262,6 +264,7 @@ export function parseEntryText(text: string, foods: Food[], savedMeals: SavedMea
         protein: 0,
         carbs: 0,
         fat: 0,
+        sugar: 0,
         isEstimate: false,
         source: "estimate",
         status: "ambiguous",
@@ -281,6 +284,7 @@ export function parseEntryText(text: string, foods: Food[], savedMeals: SavedMea
         protein: 0,
         carbs: 0,
         fat: 0,
+        sugar: 0,
         isEstimate: true,
         source: "estimate",
         status: "unresolved",

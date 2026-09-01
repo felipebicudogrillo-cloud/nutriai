@@ -7,18 +7,22 @@ export function macrosForQuantity(food: Food, quantity: number): Omit<Totals, ne
     protein: round1(food.protein * factor),
     carbs: round1(food.carbs * factor),
     fat: round1(food.fat * factor),
+    sugar: round1(food.sugar * factor),
   };
 }
 
-export function sumTotals(entries: { kcal: number; protein: number; carbs: number; fat: number }[]): Totals {
+export function sumTotals(
+  entries: { kcal: number; protein: number; carbs: number; fat: number; sugar: number }[]
+): Totals {
   return entries.reduce(
     (acc, e) => ({
       kcal: acc.kcal + e.kcal,
       protein: acc.protein + e.protein,
       carbs: acc.carbs + e.carbs,
       fat: acc.fat + e.fat,
+      sugar: acc.sugar + e.sugar,
     }),
-    { kcal: 0, protein: 0, carbs: 0, fat: 0 }
+    { kcal: 0, protein: 0, carbs: 0, fat: 0, sugar: 0 }
   );
 }
 

@@ -22,13 +22,14 @@ export function EditEntryModal({ entry, onClose }: Props) {
     protein: entry?.protein ?? 0,
     carbs: entry?.carbs ?? 0,
     fat: entry?.fat ?? 0,
+    sugar: entry?.sugar ?? 0,
   });
 
   useEffect(() => {
     if (entry) {
       setQuantity(entry.quantity);
       setMeal(entry.meal);
-      setManual({ kcal: entry.kcal, protein: entry.protein, carbs: entry.carbs, fat: entry.fat });
+      setManual({ kcal: entry.kcal, protein: entry.protein, carbs: entry.carbs, fat: entry.fat, sugar: entry.sugar });
     }
   }, [entry]);
 
@@ -70,6 +71,7 @@ export function EditEntryModal({ entry, onClose }: Props) {
             <NumField label="Proteína (g)" value={manual.protein} onChange={(v) => setManual((m) => ({ ...m, protein: v }))} />
             <NumField label="Carboidratos (g)" value={manual.carbs} onChange={(v) => setManual((m) => ({ ...m, carbs: v }))} />
             <NumField label="Gordura (g)" value={manual.fat} onChange={(v) => setManual((m) => ({ ...m, fat: v }))} />
+            <NumField label="Açúcar (g)" value={manual.sugar} onChange={(v) => setManual((m) => ({ ...m, sugar: v }))} />
           </div>
         )}
 

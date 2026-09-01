@@ -22,6 +22,7 @@ const emptyForm = (name = "") => ({
   protein: 0,
   carbs: 0,
   fat: 0,
+  sugar: 0,
   aliases: "",
   emoji: "🍽️",
 });
@@ -42,6 +43,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
         protein: editingFood.protein,
         carbs: editingFood.carbs,
         fat: editingFood.fat,
+        sugar: editingFood.sugar,
         aliases: editingFood.aliases.join(", "),
         emoji: editingFood.emoji ?? "🍽️",
       });
@@ -70,6 +72,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
       protein: form.protein,
       carbs: form.carbs,
       fat: form.fat,
+      sugar: form.sugar,
       emoji: form.emoji || "🍽️",
     };
     if (editingFood) {
@@ -170,6 +173,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
           <NumField label="Proteína (g)" value={form.protein} onChange={(v) => setForm((f) => ({ ...f, protein: v }))} />
           <NumField label="Carboidratos (g)" value={form.carbs} onChange={(v) => setForm((f) => ({ ...f, carbs: v }))} />
           <NumField label="Gordura (g)" value={form.fat} onChange={(v) => setForm((f) => ({ ...f, fat: v }))} />
+          <NumField label="Açúcar (g)" value={form.sugar} onChange={(v) => setForm((f) => ({ ...f, sugar: v }))} />
         </div>
 
         <Field label="Apelidos (separados por vírgula)">

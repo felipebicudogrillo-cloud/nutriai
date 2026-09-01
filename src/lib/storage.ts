@@ -6,11 +6,15 @@ const KEY = "nutriai:data:v1";
 function defaultData(): AppData {
   return {
     version: 1,
-    goals: { kcal: 2000, protein: 160, carbs: 220, fat: 65 },
+    goals: { kcal: 2000, protein: 160, carbs: 220, fat: 65, sugar: 50 },
     foods: buildGenericFoods(),
     entries: [],
     savedMeals: [],
   };
+}
+
+function withSugar<T extends { sugar?: number }>(item: T): T & { sugar: number } {
+  return { ...item, sugar: item.sugar ?? 0 };
 }
 
 export function loadData(): AppData {
@@ -21,14 +25,21 @@ export function loadData(): AppData {
     // Re-sync generic foods so app updates (new foods, fixed macros) reach existing users
     // without touching anything the user personalized.
     const generic = buildGenericFoods();
-    const personal = parsed.foods.filter((f) => f.isPersonal);
+    const personal = parsed.foods.filter((f) => f.isPersonal).map(withSugar);
     const mergedGeneric = generic.map((g) => {
       const prevUsage = parsed.foods.find((f) => f.id === g.id);
       return prevUsage
         ? { ...g, useCount: prevUsage.useCount, lastUsedAt: prevUsage.lastUsedAt }
         : g;
     });
-    return { ...defaultData(), ...parsed, foods: [...mergedGeneric, ...personal] };
+    return {
+      ...defaultData(),
+      ...parsed,
+      goals: { ...defaultData().goals, ...parsed.goals },
+      foods: [...mergedGeneric, ...personal],
+      entries: parsed.entries.map(withSugar),
+      savedMeals: parsed.savedMeals.map((m) => ({ ...m, items: m.items.map(withSugar) })),
+    };
   } catch {
     return defaultData();
   }
