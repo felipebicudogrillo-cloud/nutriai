@@ -178,6 +178,16 @@ const seeds: Seed[] = [
   { name: "Rojões", aliases: ["rojões", "rojoes"], unit: "g", basis: "per100", refAmount: 100, kcal: 320, protein: 22, carbs: 3, fat: 24, sugar: 0.5, emoji: "🥩" },
   { name: "Peixinhos da horta", aliases: ["peixinhos da horta"], unit: "g", basis: "per100", refAmount: 100, kcal: 210, protein: 4, carbs: 20, fat: 13, sugar: 1, emoji: "🫛" },
   { name: "Bolo Rei", aliases: ["bolo rei"], unit: "g", basis: "per100", refAmount: 100, kcal: 350, protein: 6, carbs: 55, fat: 12, sugar: 30, emoji: "🍰" },
+
+  // --- Fritos e fast-food ---
+  { name: "Kebab", aliases: ["kebab", "döner", "doner"], unit: "unidade", basis: "perUnit", refAmount: 300, kcal: 600, protein: 30, carbs: 55, fat: 28, sugar: 5, emoji: "🌯" },
+  { name: "Frango do churrasco", aliases: ["frango do churrasco", "frango piri-piri", "frango piri piri", "frango de churrasco"], unit: "g", basis: "per100", refAmount: 100, kcal: 220, protein: 24, carbs: 1, fat: 13, sugar: 0.5, emoji: "🍗" },
+  { name: "Croquete", aliases: ["croquete", "croquetes"], unit: "unidade", basis: "perUnit", refAmount: 50, kcal: 130, protein: 6, carbs: 10, fat: 7.5, sugar: 0.5, emoji: "🧆" },
+  { name: "Asas de frango", aliases: ["asas de frango", "asinhas"], unit: "g", basis: "per100", refAmount: 100, kcal: 290, protein: 24, carbs: 4, fat: 20, sugar: 0.5, emoji: "🍗" },
+  { name: "Anéis de cebola", aliases: ["anéis de cebola", "aneis de cebola", "onion rings"], unit: "g", basis: "per100", refAmount: 100, kcal: 320, protein: 4, carbs: 38, fat: 17, sugar: 3, emoji: "🧅" },
+  { name: "Febras", aliases: ["febras"], unit: "g", basis: "per100", refAmount: 100, kcal: 200, protein: 27, carbs: 1, fat: 10, sugar: 0.5, emoji: "🥩" },
+  { name: "Entrecosto", aliases: ["entrecosto"], unit: "g", basis: "per100", refAmount: 100, kcal: 280, protein: 22, carbs: 2, fat: 20, sugar: 1, emoji: "🍖" },
+  { name: "Frango panado", aliases: ["panado", "frango panado", "escalope panado"], unit: "unidade", basis: "perUnit", refAmount: 130, kcal: 300, protein: 24, carbs: 18, fat: 15, sugar: 1, emoji: "🍗" },
 ];
 
 export function buildGenericFoods(): Food[] {
