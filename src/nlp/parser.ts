@@ -81,7 +81,7 @@ interface QtyMatch {
 }
 
 function extractQuantity(segment: string): QtyMatch | null {
-  const re = /(\d+(?:[.,]\d+)?)\s*(kg|gramas?|g|litros?|l|ml|unidades?|unid\.?|fatias?|colheres? de sopa|colheres?|xicaras?|copos?)?/;
+  const re = /(\d+(?:[.,]\d+)?)\s*(kg|gramas?|g|litros?|l|ml|unidades?|unid\.?|fatias?|colheres? de sopa|colheres?|xicaras?|copos?)?\b/;
   const m = segment.match(re);
   if (!m) return null;
   const num = parseFloat(m[1].replace(",", "."));
