@@ -6,12 +6,14 @@ import { RegisterScreen } from "./screens/RegisterScreen";
 import { HistoryScreen } from "./screens/HistoryScreen";
 import { CompareScreen } from "./screens/CompareScreen";
 import { ProfileScreen } from "./screens/ProfileScreen";
+import { UpdateBanner } from "./components/shared/UpdateBanner";
 
 function AppShell() {
   const [tab, setTab] = useState<Tab>("home");
 
   return (
     <div className="min-h-screen bg-ink-50 safe-top">
+      <UpdateBanner />
       {tab === "home" && <HomeScreen />}
       {tab === "register" && <RegisterScreen onDone={() => setTab("home")} />}
       {tab === "history" && <HistoryScreen />}
