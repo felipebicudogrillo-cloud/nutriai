@@ -6,10 +6,11 @@ const KEY = "nutriai:data:v1";
 function defaultData(): AppData {
   return {
     version: 1,
-    goals: { kcal: 2000, protein: 160, carbs: 220, fat: 65, sugar: 50 },
+    goals: { kcal: 2000, protein: 160, carbs: 220, fat: 65, sugar: 50, water: 2000 },
     foods: buildGenericFoods(),
     entries: [],
     savedMeals: [],
+    waterEntries: [],
   };
 }
 
@@ -39,6 +40,7 @@ export function loadData(): AppData {
       foods: [...mergedGeneric, ...personal],
       entries: parsed.entries.map(withSugar),
       savedMeals: parsed.savedMeals.map((m) => ({ ...m, items: m.items.map(withSugar) })),
+      waterEntries: parsed.waterEntries ?? [],
     };
   } catch {
     return defaultData();

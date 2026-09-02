@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import type { AppData, Food, Goals, LogEntry, SavedMeal } from "../types";
+import type { AppData, Food, Goals, LogEntry, SavedMeal, WaterEntry } from "../types";
 import { loadData, saveData } from "../lib/storage";
 import { makeId } from "../lib/id";
 
@@ -19,6 +19,8 @@ interface AppContextValue {
   updateSavedMeal: (id: string, patch: Partial<SavedMeal>) => void;
   deleteSavedMeal: (id: string) => void;
   touchSavedMealUsage: (id: string) => void;
+  addWater: (date: string, amountMl: number) => void;
+  deleteWaterEntry: (id: string) => void;
 }
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -118,6 +120,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
           ...d,
           savedMeals: d.savedMeals.map((m) => (m.id === id ? { ...m, useCount: m.useCount + 1, lastUsedAt: now } : m)),
         }));
+      },
+
+      addWater(date, amountMl) {
+        const now = new Date().toISOString();
+        const entry: WaterEntry = { id: makeId(), date, amountMl, createdAt: now };
+        setData((d) => ({ ...d, waterEntries: [...d.waterEntries, entry] }));
+      },
+
+      deleteWaterEntry(id) {
+        setData((d) => ({ ...d, waterEntries: d.waterEntries.filter((e) => e.id !== id) }));
       },
     };
   }, [data]);

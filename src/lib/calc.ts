@@ -1,4 +1,4 @@
-import type { Food, LogEntry, Totals } from "../types";
+import type { Food, LogEntry, Totals, WaterEntry } from "../types";
 
 export function macrosForQuantity(food: Food, quantity: number): Omit<Totals, never> {
   const factor = food.basis === "per100" ? quantity / 100 : quantity;
@@ -28,6 +28,14 @@ export function sumTotals(
 
 export function entriesForDay(entries: LogEntry[], date: string): LogEntry[] {
   return entries.filter((e) => e.date === date);
+}
+
+export function waterForDay(entries: WaterEntry[], date: string): WaterEntry[] {
+  return entries.filter((e) => e.date === date);
+}
+
+export function sumWater(entries: WaterEntry[]): number {
+  return entries.reduce((acc, e) => acc + e.amountMl, 0);
 }
 
 export function round(n: number): number {

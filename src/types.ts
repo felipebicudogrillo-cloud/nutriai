@@ -82,6 +82,14 @@ export interface Goals {
   carbs?: number;
   fat?: number;
   sugar?: number;
+  water?: number;
+}
+
+export interface WaterEntry {
+  id: string;
+  date: string; // YYYY-MM-DD
+  amountMl: number;
+  createdAt: string;
 }
 
 export interface AppData {
@@ -90,6 +98,7 @@ export interface AppData {
   foods: Food[];
   entries: LogEntry[];
   savedMeals: SavedMeal[];
+  waterEntries: WaterEntry[];
 }
 
 export interface Totals {

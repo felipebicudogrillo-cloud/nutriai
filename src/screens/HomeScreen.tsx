@@ -5,6 +5,7 @@ import { todayKey } from "../lib/date";
 import { ProgressBar } from "../components/shared/ProgressBar";
 import { DayDiary } from "../components/day/DayDiary";
 import { EditEntryModal } from "../components/day/EditEntryModal";
+import { WaterCard } from "../components/home/WaterCard";
 import type { LogEntry } from "../types";
 
 export function HomeScreen() {
@@ -56,6 +57,8 @@ export function HomeScreen() {
           <MacroMini label="Açúcar" value={totals.sugar} goal={goals.sugar} emoji="🍬" />
         </div>
       </section>
+
+      <WaterCard date={date} />
 
       <DayDiary
         entries={entries}
