@@ -21,6 +21,7 @@ interface AppContextValue {
   touchSavedMealUsage: (id: string) => void;
   addWater: (date: string, amountMl: number) => void;
   deleteWaterEntry: (id: string) => void;
+  setWaterForDay: (date: string, amountMl: number) => void;
 }
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -130,6 +131,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
       deleteWaterEntry(id) {
         setData((d) => ({ ...d, waterEntries: d.waterEntries.filter((e) => e.id !== id) }));
+      },
+
+      setWaterForDay(date, amountMl) {
+        const now = new Date().toISOString();
+        setData((d) => {
+          const others = d.waterEntries.filter((e) => e.date !== date);
+          if (amountMl <= 0) return { ...d, waterEntries: others };
+          return { ...d, waterEntries: [...others, { id: makeId(), date, amountMl, createdAt: now }] };
+        });
       },
     };
   }, [data]);
