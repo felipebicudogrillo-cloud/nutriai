@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { flushSync } from "react-dom";
 import type { AppData, Food, Goals, LogEntry, SavedMeal, WaterEntry } from "../types";
 import { loadData, saveData } from "../lib/storage";
 import { makeId } from "../lib/id";
@@ -27,7 +28,20 @@ interface AppContextValue {
 const AppContext = createContext<AppContextValue | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [data, setData] = useState<AppData>(() => loadData());
+  const [data, setDataRaw] = useState<AppData>(() => loadData());
+
+  // Some mobile browsers appear to delay repainting DOM updates that come
+  // from React's normal (batched/scheduled) state updates when they happen
+  // inside certain touch/pointer event handlers — the state is correct but
+  // the screen doesn't visibly refresh until something else forces a
+  // repaint (like a full page reload). flushSync forces every mutation
+  // here to apply and paint synchronously, before control returns to the
+  // browser, so there's nothing left to "wait" on.
+  function setData(updater: (d: AppData) => AppData) {
+    flushSync(() => {
+      setDataRaw(updater);
+    });
+  }
 
   useEffect(() => {
     saveData(data);
