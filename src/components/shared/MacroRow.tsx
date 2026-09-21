@@ -10,7 +10,7 @@ interface Props {
 export function MacroRow({ kcal, protein, carbs, fat, sugar, size = "sm" }: Props) {
   const text = size === "sm" ? "text-xs" : "text-sm";
   return (
-    <div className={`flex items-center gap-3 ${text} text-ink-500`}>
+    <div className={`flex flex-wrap items-center gap-x-3 gap-y-0.5 ${text} text-ink-500`}>
       <span className="font-medium text-ink-700">🔥 {Math.round(kcal)} kcal</span>
       <span>💪 {round1(protein)}g</span>
       <span>🍚 {round1(carbs)}g</span>

@@ -28,14 +28,12 @@ export function HomeScreen() {
       </header>
 
       <section className="bg-surface rounded-xl2 shadow-card p-5 mb-4">
-        <div className="flex items-end justify-between mb-2">
-          <div>
-            <p className="text-3xl font-bold text-ink-900 tabular-nums">
-              {Math.round(totals.kcal)}
-              <span className="text-base font-medium text-ink-400"> / {goals.kcal} kcal</span>
-            </p>
-          </div>
-          <p className={`text-sm font-medium ${kcalOver ? "text-amber-500" : "text-brand-600"}`}>
+        <div className="mb-2">
+          <p className="text-3xl font-bold text-ink-900 tabular-nums">
+            {Math.round(totals.kcal)}
+            <span className="text-base font-medium text-ink-400"> / {goals.kcal} kcal</span>
+          </p>
+          <p className={`text-sm font-medium mt-0.5 ${kcalOver ? "text-amber-500" : "text-brand-600"}`}>
             {kcalOver
               ? `🔴 ${Math.abs(Math.round(kcalRemaining))} kcal acima da meta`
               : `🟢 ${Math.round(kcalRemaining)} kcal restantes`}

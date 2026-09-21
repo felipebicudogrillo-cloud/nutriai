@@ -18,9 +18,11 @@ export function MealGroup({ meal, entries, goals, onDelete, onEdit }: Props) {
 
   return (
     <div className="bg-surface rounded-xl2 shadow-card p-4">
-      <div className="flex items-baseline justify-between mb-1">
+      <div className="mb-1">
         <h3 className="font-semibold text-ink-900">{MEAL_LABELS[meal]}</h3>
-        <MacroRow {...totals} />
+        <div className="mt-1">
+          <MacroRow {...totals} />
+        </div>
       </div>
       {impactPct >= 30 && (
         <p className="text-xs text-ink-400 mb-2">

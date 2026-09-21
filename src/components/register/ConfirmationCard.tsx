@@ -152,11 +152,15 @@ export function ConfirmationCard({
 
         <div className="fixed bottom-0 inset-x-0 bg-surface border-t border-ink-100 safe-bottom">
           <div className="max-w-md mx-auto px-4 py-4">
-            <div className="flex items-center justify-between mb-3 text-sm">
+            <div className="mb-3 text-sm">
               <span className="text-ink-500">Total</span>
-              <span className="font-semibold text-ink-900">
-                🔥 {Math.round(totals.kcal)} kcal · 💪 {round1(totals.protein)}g · 🍚 {round1(totals.carbs)}g · 🥑 {round1(totals.fat)}g · 🍬 {round1(totals.sugar)}g
-              </span>
+              <p className="font-semibold text-ink-900 flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5">
+                <span>🔥 {Math.round(totals.kcal)} kcal</span>
+                <span>💪 {round1(totals.protein)}g</span>
+                <span>🍚 {round1(totals.carbs)}g</span>
+                <span>🥑 {round1(totals.fat)}g</span>
+                <span>🍬 {round1(totals.sugar)}g</span>
+              </p>
             </div>
             <button
               onClick={onConfirm}
