@@ -41,7 +41,15 @@ export function UpdateBanner() {
 
   return (
     <button
-      onClick={() => window.location.reload()}
+      onClick={() => {
+        // location.reload() can still be served from the browser's HTTP
+        // cache on mobile (there's no mobile equivalent of a hard-refresh
+        // shortcut). Navigating to a URL with a fresh query string is a
+        // different cache key, so it's guaranteed to hit the network.
+        const url = new URL(window.location.href);
+        url.searchParams.set("v", Date.now().toString());
+        window.location.href = url.toString();
+      }}
       className="fixed top-0 inset-x-0 z-[70] bg-brand-500 text-white text-sm font-medium py-2.5 text-center safe-top active:bg-brand-600"
     >
       Nova versão disponível — toque para atualizar
