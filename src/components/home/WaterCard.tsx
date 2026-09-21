@@ -79,10 +79,13 @@ export function WaterCard({ date }: Props) {
         onPointerCancel={handlePointerUp}
       >
         <div className="absolute inset-x-0 h-4 rounded-full bg-ink-100" />
-        <div className="absolute left-0 h-4 rounded-full bg-sky-500" style={{ width: `${pct}%` }} />
         <div
-          className="absolute h-7 w-7 rounded-full bg-sky-500 border-[3px] border-white shadow-[0_1px_4px_rgba(16,20,24,0.3)]"
-          style={{ left: `calc(${pct}% - 14px)` }}
+          className="absolute inset-y-0 left-0 h-4 my-auto w-full origin-left rounded-full bg-sky-500"
+          style={{ transform: `scaleX(${pct / 100})` }}
+        />
+        <div
+          className="absolute top-1/2 h-7 w-7 -translate-y-1/2 -translate-x-1/2 rounded-full bg-sky-500 border-[3px] border-white shadow-[0_1px_4px_rgba(16,20,24,0.3)]"
+          style={{ left: `${pct}%` }}
         />
       </div>
     </section>
