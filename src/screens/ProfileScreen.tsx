@@ -1,6 +1,7 @@
 import { GoalsCard } from "../components/profile/GoalsCard";
 import { MyMemoryCard } from "../components/profile/MyMemoryCard";
 import { SavedMealsCard } from "../components/profile/SavedMealsCard";
+import { ThemeCard } from "../components/profile/ThemeCard";
 
 export function ProfileScreen() {
   return (
@@ -10,6 +11,7 @@ export function ProfileScreen() {
       </header>
 
       <div className="space-y-4">
+        <ThemeCard />
         <GoalsCard />
         <MyMemoryCard />
         <SavedMealsCard />

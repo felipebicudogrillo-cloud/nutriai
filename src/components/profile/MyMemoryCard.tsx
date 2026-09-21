@@ -9,7 +9,7 @@ export function MyMemoryCard() {
   const [editingFood, setEditingFood] = useState<Food | null>(null);
 
   return (
-    <div className="bg-white rounded-xl2 shadow-card p-4">
+    <div className="bg-surface rounded-xl2 shadow-card p-4">
       <div className="flex items-center justify-between mb-1">
         <h2 className="font-semibold text-ink-900">Minha memória</h2>
         <button

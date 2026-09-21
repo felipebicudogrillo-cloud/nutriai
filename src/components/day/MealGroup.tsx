@@ -17,7 +17,7 @@ export function MealGroup({ meal, entries, goals, onDelete, onEdit }: Props) {
   const impactPct = goals.kcal > 0 ? Math.round((totals.kcal / goals.kcal) * 100) : 0;
 
   return (
-    <div className="bg-white rounded-xl2 shadow-card p-4">
+    <div className="bg-surface rounded-xl2 shadow-card p-4">
       <div className="flex items-baseline justify-between mb-1">
         <h3 className="font-semibold text-ink-900">{MEAL_LABELS[meal]}</h3>
         <MacroRow {...totals} />

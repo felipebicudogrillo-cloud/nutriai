@@ -78,7 +78,7 @@ export function EditEntryModal({ entry, onClose }: Props) {
         <div>
           <label className="text-xs font-medium text-ink-500 mb-1 block">Refeição</label>
           <select
-            className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm bg-white"
+            className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm bg-surface text-ink-900"
             value={meal}
             onChange={(e) => setMeal(e.target.value as MealSlot)}
           >

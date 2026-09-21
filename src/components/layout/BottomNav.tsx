@@ -15,7 +15,7 @@ const ITEMS: { id: Tab; label: string; icon: string }[] = [
 
 export function BottomNav({ active, onChange }: Props) {
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-40 bg-white/90 backdrop-blur border-t border-ink-100 safe-bottom">
+    <nav className="fixed bottom-0 inset-x-0 z-40 bg-surface/90 backdrop-blur border-t border-ink-100 safe-bottom">
       <div className="mx-auto max-w-md flex items-stretch">
         {ITEMS.map((item) => {
           const isRegister = item.id === "register";

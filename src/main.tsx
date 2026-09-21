@@ -2,6 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { applyTheme, getThemePreference } from './lib/theme'
+
+// The inline script in index.html already applied the "dark" class before
+// paint (avoids a flash of the wrong theme); this syncs the browser-chrome
+// theme-color meta tag to match, which needs the DOM element to exist.
+applyTheme(getThemePreference())
 
 // iOS Safari (and some other mobile browsers) can restore a frozen snapshot
 // of the page from the back-forward cache when the user switches apps and

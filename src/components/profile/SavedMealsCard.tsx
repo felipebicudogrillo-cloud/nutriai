@@ -10,7 +10,7 @@ export function SavedMealsCard() {
   const [editing, setEditing] = useState<SavedMeal | null>(null);
 
   return (
-    <div className="bg-white rounded-xl2 shadow-card p-4">
+    <div className="bg-surface rounded-xl2 shadow-card p-4">
       <div className="flex items-center justify-between mb-1">
         <h2 className="font-semibold text-ink-900">Refeições salvas</h2>
         <button

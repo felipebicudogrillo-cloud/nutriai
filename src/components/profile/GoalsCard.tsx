@@ -14,7 +14,7 @@ export function GoalsCard() {
 
   if (!editing) {
     return (
-      <div className="bg-white rounded-xl2 shadow-card p-4">
+      <div className="bg-surface rounded-xl2 shadow-card p-4">
         <div className="flex items-center justify-between mb-3">
           <h2 className="font-semibold text-ink-900">Metas diárias</h2>
           <button
@@ -40,7 +40,7 @@ export function GoalsCard() {
   }
 
   return (
-    <div className="bg-white rounded-xl2 shadow-card p-4">
+    <div className="bg-surface rounded-xl2 shadow-card p-4">
       <h2 className="font-semibold text-ink-900 mb-3">Editar metas</h2>
       <div className="grid grid-cols-2 gap-3 mb-4">
         <NumField label="Calorias (kcal)" value={form.kcal} onChange={(v) => setForm((f) => ({ ...f, kcal: v }))} />

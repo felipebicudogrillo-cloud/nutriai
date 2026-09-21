@@ -37,7 +37,7 @@ export function HistoryScreen() {
             <button
               key={date}
               onClick={() => setOpenDate(date)}
-              className="w-full bg-white rounded-xl2 shadow-card p-4 flex items-center justify-between text-left"
+              className="w-full bg-surface rounded-xl2 shadow-card p-4 flex items-center justify-between text-left"
             >
               <div>
                 <p className="text-xs uppercase tracking-wide text-ink-400">

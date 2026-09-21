@@ -20,7 +20,7 @@ export function NumberInput({ value, onChange, className, step, placeholder }: P
     <input
       type="number"
       inputMode="decimal"
-      className={className}
+      className={`bg-surface text-ink-900 ${className ?? ""}`}
       placeholder={placeholder}
       step={step}
       value={raw}

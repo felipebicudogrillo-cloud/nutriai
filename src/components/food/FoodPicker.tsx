@@ -31,7 +31,7 @@ export function FoodPicker({ open, onClose, foods, presetCandidates, initialQuer
     <Modal open={open} onClose={onClose} title="Qual alimento?">
       <input
         autoFocus
-        className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm mb-3"
+        className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm mb-3"
         placeholder="Buscar alimento..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}

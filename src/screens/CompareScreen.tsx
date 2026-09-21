@@ -69,14 +69,14 @@ function DaysView({
   ];
 
   return (
-    <div className="bg-white rounded-xl2 shadow-card p-4 mb-6">
+    <div className="bg-surface rounded-xl2 shadow-card p-4 mb-6">
       <div className="flex items-center gap-2 mb-4">
         <input
           type="date"
           value={dateA}
           max={todayKey()}
           onChange={(e) => onChangeA(e.target.value)}
-          className="flex-1 rounded-lg border border-ink-200 px-2 py-1.5 text-sm"
+          className="flex-1 rounded-lg border border-ink-200 bg-surface text-ink-900 px-2 py-1.5 text-sm"
         />
         <span className="text-ink-300 text-sm">vs</span>
         <input
@@ -84,7 +84,7 @@ function DaysView({
           value={dateB}
           max={todayKey()}
           onChange={(e) => onChangeB(e.target.value)}
-          className="flex-1 rounded-lg border border-ink-200 px-2 py-1.5 text-sm"
+          className="flex-1 rounded-lg border border-ink-200 bg-surface text-ink-900 px-2 py-1.5 text-sm"
         />
       </div>
 
@@ -143,7 +143,7 @@ function PeriodView({ period, onChangePeriod }: { period: Period; onChangePeriod
             key={p}
             onClick={() => onChangePeriod(p as Period)}
             className={`flex-1 rounded-lg py-1.5 text-xs font-medium border ${
-              period === p ? "border-ink-800 bg-ink-900 text-white" : "border-ink-200 text-ink-500"
+              period === p ? "border-[#1a1e24] bg-[#12151a] text-white" : "border-ink-200 text-ink-500"
             }`}
           >
             {p} dias
@@ -151,7 +151,7 @@ function PeriodView({ period, onChangePeriod }: { period: Period; onChangePeriod
         ))}
       </div>
 
-      <div className="bg-white rounded-xl2 shadow-card p-4 mb-3">
+      <div className="bg-surface rounded-xl2 shadow-card p-4 mb-3">
         <p className="text-xs text-ink-400 mb-3">Média diária · últimos {period} dias</p>
         <div className="grid grid-cols-2 gap-3 text-sm">
           <AvgTile label="Calorias" value={Math.round(avg.kcal)} unit="kcal/dia" goal={data.goals.kcal} emoji="🔥" />
@@ -161,7 +161,7 @@ function PeriodView({ period, onChangePeriod }: { period: Period; onChangePeriod
         </div>
       </div>
 
-      <div className="bg-white rounded-xl2 shadow-card p-4">
+      <div className="bg-surface rounded-xl2 shadow-card p-4">
         <p className="text-xs text-ink-400 mb-3">Calorias por dia vs meta</p>
         <div className="flex items-end gap-1 h-28">
           {perDay.map(({ date, totals }) => {
@@ -220,7 +220,7 @@ function ConsistencySection() {
   const m = score(30);
 
   return (
-    <div className="bg-white rounded-xl2 shadow-card p-4">
+    <div className="bg-surface rounded-xl2 shadow-card p-4">
       <h2 className="font-semibold text-ink-900 mb-3">Consistência</h2>
       <div className="space-y-3 text-sm">
         <ConsistencyRow label="Últimos 7 dias" data={w} />

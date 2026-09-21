@@ -27,7 +27,7 @@ export function HomeScreen() {
         <h1 className="text-2xl font-bold text-ink-900">{greeting()}</h1>
       </header>
 
-      <section className="bg-white rounded-xl2 shadow-card p-5 mb-4">
+      <section className="bg-surface rounded-xl2 shadow-card p-5 mb-4">
         <div className="flex items-end justify-between mb-2">
           <div>
             <p className="text-3xl font-bold text-ink-900 tabular-nums">

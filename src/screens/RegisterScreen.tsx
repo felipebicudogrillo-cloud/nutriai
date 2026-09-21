@@ -134,9 +134,9 @@ export function RegisterScreen({ onDone }: Props) {
       <h1 className="text-2xl font-bold text-ink-900 mb-1">O que você comeu?</h1>
       <p className="text-sm text-ink-400 mb-5">Digite ou fale naturalmente. Eu entendo o resto.</p>
 
-      <div className="bg-white rounded-xl2 shadow-card p-3 flex items-end gap-2 mb-4">
+      <div className="bg-surface rounded-xl2 shadow-card p-3 flex items-end gap-2 mb-4">
         <textarea
-          className="flex-1 resize-none outline-none text-base text-ink-900 placeholder:text-ink-300 min-h-[88px] p-2"
+          className="flex-1 resize-none outline-none bg-transparent text-base text-ink-900 placeholder:text-ink-300 min-h-[88px] p-2"
           placeholder="Ex: comi 200g de frango, 150g de arroz e uma banana"
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -160,7 +160,7 @@ export function RegisterScreen({ onDone }: Props) {
               <button
                 key={f.id}
                 onClick={() => handleQuickAdd(f)}
-                className="flex items-center gap-1.5 rounded-full border border-ink-200 bg-white px-3 py-1.5 text-xs font-medium text-ink-700"
+                className="flex items-center gap-1.5 rounded-full border border-ink-200 bg-surface px-3 py-1.5 text-xs font-medium text-ink-700"
               >
                 <span>{f.emoji ?? "🍽️"}</span> {f.name}
               </button>

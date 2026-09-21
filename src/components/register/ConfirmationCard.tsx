@@ -66,7 +66,7 @@ export function ConfirmationCard({
 
         <div className="space-y-2 mb-4">
           {items.map((item) => (
-            <div key={item.id} className="bg-white rounded-xl2 shadow-card p-4">
+            <div key={item.id} className="bg-surface rounded-xl2 shadow-card p-4">
               {item.status === "resolved" && (
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{item.emoji ?? "🍽️"}</span>
@@ -129,7 +129,7 @@ export function ConfirmationCard({
                     </button>
                     <button
                       onClick={() => setCreation({ target: { kind: "resolve", item }, name: item.foodName })}
-                      className="flex-1 rounded-lg bg-ink-900 text-white py-2 text-xs font-medium"
+                      className="flex-1 rounded-lg bg-[#12151a] text-white py-2 text-xs font-medium"
                     >
                       Criar personalizado
                     </button>
@@ -150,7 +150,7 @@ export function ConfirmationCard({
           + Adicionar outro alimento
         </button>
 
-        <div className="fixed bottom-0 inset-x-0 bg-white border-t border-ink-100 safe-bottom">
+        <div className="fixed bottom-0 inset-x-0 bg-surface border-t border-ink-100 safe-bottom">
           <div className="max-w-md mx-auto px-4 py-4">
             <div className="flex items-center justify-between mb-3 text-sm">
               <span className="text-ink-500">Total</span>

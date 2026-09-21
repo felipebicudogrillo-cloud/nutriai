@@ -55,7 +55,7 @@ export function WaterCard({ date }: Props) {
   }
 
   return (
-    <section className="bg-white rounded-xl2 shadow-card p-5 mb-4">
+    <section className="bg-surface rounded-xl2 shadow-card p-5 mb-4">
       <div className="flex items-end justify-between mb-3">
         <p className="text-xl font-bold text-ink-900 tabular-nums">
           {dragValue}

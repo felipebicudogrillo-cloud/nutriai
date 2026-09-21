@@ -90,7 +90,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
       <div className="space-y-4">
         <Field label="Nome">
           <input
-            className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm"
             placeholder="Ex: Pudim do Mercadona"
             value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
@@ -101,7 +101,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
         <div className="grid grid-cols-[1fr_auto] gap-3">
           <Field label="Marca (opcional)">
             <input
-              className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm"
+              className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm"
               placeholder="Ex: Mercadona"
               value={form.brand}
               onChange={(e) => setForm((f) => ({ ...f, brand: e.target.value }))}
@@ -109,7 +109,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
           </Field>
           <Field label="Emoji">
             <input
-              className="w-14 rounded-lg border border-ink-200 px-3 py-2 text-sm text-center"
+              className="w-14 rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm text-center"
               value={form.emoji}
               onChange={(e) => setForm((f) => ({ ...f, emoji: e.target.value }))}
             />
@@ -138,7 +138,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
         {form.basis === "perUnit" ? (
           <Field label="Quanto pesa 1 unidade (g, opcional)">
             <NumberInput
-              className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm"
+              className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm"
               value={form.refAmount}
               onChange={(v) => setForm((f) => ({ ...f, refAmount: v }))}
             />
@@ -178,7 +178,7 @@ export function FoodEditor({ open, onClose, initialName, editingFood, onSaved }:
 
         <Field label="Apelidos (separados por vírgula)">
           <input
-            className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm"
             placeholder="Ex: meu pudim, pudim mercadona"
             value={form.aliases}
             onChange={(e) => setForm((f) => ({ ...f, aliases: e.target.value }))}
@@ -209,7 +209,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 function NumField({ label, value, onChange }: { label: string; value: number; onChange: (v: number) => void }) {
   return (
     <Field label={label}>
-      <NumberInput className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm" value={value} onChange={onChange} />
+      <NumberInput className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm" value={value} onChange={onChange} />
     </Field>
   );
 }

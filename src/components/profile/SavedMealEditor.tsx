@@ -76,7 +76,7 @@ export function SavedMealEditor({ open, onClose, editing }: Props) {
         <div>
           <label className="text-xs font-medium text-ink-500 mb-1 block">Nome</label>
           <input
-            className="w-full rounded-lg border border-ink-200 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-ink-200 bg-surface text-ink-900 px-3 py-2 text-sm"
             placeholder="Ex: Meu almoço"
             value={name}
             onChange={(e) => setName(e.target.value)}
